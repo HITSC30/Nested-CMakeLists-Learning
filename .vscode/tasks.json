@@ -1,0 +1,24 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label":"debuglabel",
+			"type": "shell",
+			"command": "cmake -S . -B build && cmake --build build -j",
+			"detail": "CMake 模板 配置 任务",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher":"$gcc"
+		}
+	]
+}
