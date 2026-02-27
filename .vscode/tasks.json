@@ -4,7 +4,7 @@
 		{
 			"label":"debuglabel",
 			"type": "shell",
-			"command": "cmake -S . -B build && cmake --build build -j",
+			"command": "cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build && cmake --build build -j",
 			"detail": "CMake 模板 配置 任务",
 			"group": {
 				"kind": "build",

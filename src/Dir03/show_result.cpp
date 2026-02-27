@@ -2,6 +2,7 @@
 #include <matplot/matplot.h>
 #include <vector>
 #include <cmath>
+#include <thread>
 
 void ShowResult::drawResult()
 {
@@ -35,5 +36,6 @@ void ShowResult::drawResult()
     axis(equal); // 保持 XY 轴比例一致，确保圆是圆的
 
     // 5. 显示结果 (替代 system("pause"))                
-    show();
+    save("result.png"); 
+
 }
