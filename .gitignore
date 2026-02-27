@@ -18,7 +18,6 @@ main
 *.so
 *.d
 
-#.vscode/
 .cache
 .idea/
 .DS_Store
