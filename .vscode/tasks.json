@@ -20,9 +20,9 @@
             "label": "debuglabel",
             "type": "shell",
             "command": "echo 'Build and Deploy Complete'",
-            // 最终目标任务依赖于部署任务，按顺序执行
+            // 🚀 核心修改：让它依赖于编译任务！
             "dependsOn": [
-                "Deploy Binaries"
+                "CMake Build"
             ],
             "dependsOrder": "sequence",
             "group": {
