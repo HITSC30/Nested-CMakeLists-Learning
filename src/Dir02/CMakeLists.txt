@@ -4,9 +4,16 @@ project(Dir02_Subroutine)
 # Find Eigen
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
+# Build Library
 add_library(${PROJECT_NAME}
 SHARED
 process.cpp)
+
+# Set Library address
+set_target_properties(${PROJECT_NAME}
+    PROPERTIES 
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/libs"
+)
 
 # Include Path
 target_include_directories(${PROJECT_NAME}
