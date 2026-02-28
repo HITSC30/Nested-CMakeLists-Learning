@@ -1,3 +1,5 @@
+
+//gdb+gcc
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -27,6 +29,7 @@
                 "text": "-enable-pretty-printing",
                 "ignoreFailures": true
             },
+       
             {
                 "description": "将反汇编风格设置为 Intel",
                 "text": "-gdb-set disassembly-flavor intel",
@@ -36,3 +39,31 @@
     }
     ]
 }
+
+
+/*
+//lldb调试+clang
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "(CodeLLDB) 启动",
+        "type": "lldb", // --- 关键修改：类型必须是 lldb ---
+        "request": "launch",
+        "program": "${workspaceFolder}/bin/planning_main",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}/bin",
+        "preLaunchTask": "debuglabel",
+        "environment": [
+            {
+                "name": "LD_LIBRARY_PATH",
+                "value": "${workspaceFolder}/libs"
+            }
+        ],
+        "externalConsole": false,
+        // --- CodeLLDB 不需要 MIMode 和 setupCommands ---
+    }
+    ]
+}
+*/

@@ -1,3 +1,4 @@
+//gdb+gcc
 {
 	"version": "2.0.0",
 	"tasks": [
@@ -39,3 +40,50 @@
         }
 	]
 }
+/*
+//llvm+clang
+{
+	"version": "2.0.0",
+	"tasks": [
+
+        {
+            "label": "CMake Configure",
+            "type": "shell",
+            // --- 修改这里 ---
+            "command": "cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug -S . -B build",
+            // ----------------
+            "group": "build",
+            "problemMatcher": "$gcc" // 这里保留 $gcc 是为了适配报错提示格式
+        },
+        {
+            "label": "CMake Build",
+            "type": "shell",
+            "command": "cmake --build build -j",
+            "group": "build",
+            "problemMatcher": "$gcc",
+            "dependsOn": ["CMake Configure"]
+        },
+        {
+            "label": "debuglabel",
+            "type": "shell",
+            "command": "echo 'Build and Deploy Complete'",
+            // 🚀 核心修改：让它依赖于编译任务！
+            "dependsOn": [
+                "CMake Build"
+            ],
+            "dependsOrder": "sequence",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": "$gcc"
+        }
+	]
+}
+    */
